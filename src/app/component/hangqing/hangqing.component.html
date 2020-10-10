@@ -1,0 +1,10 @@
+<div class="stock">
+  <table class="stockList" >
+    <tr *ngFor="let stock of stockList" >
+      <td>{{stock.name}}</td>
+      <td>{{stock.value}}</td>
+      <td class="increment" [class]={zengzhi:stock.increment<0}>{{stock.increment}}</td>
+      <td></td>
+    </tr>
+  </table>
+</div>

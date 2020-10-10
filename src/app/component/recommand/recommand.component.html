@@ -1,0 +1,14 @@
+<div>
+  <div class="newsList">
+    <div class="newsItem" *ngFor="let items of recommand">
+      <h3>{{items.original_status.rawTitle}}</h3>
+      <p [innerHTML]="items.original_status.description"></p>
+      <div>
+        <span class="userName">
+          {{items.original_status.user.screen_name}}
+        </span>
+        <span>{{items.original_status.created_at |totime|date:'MM-dd' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.choose{
+  position: relative;
+  width: 760px;
+  margin: 0 auto;
+  font-family: Helvetica, Arial, YaHei;
+
+  .left{
+    position: relative;
+    margin: 10px 0 0 0;
+
+    .chooseMarket{
+      border-bottom: 1px solid #E0E0E0;
+      padding-bottom: 6px;
+      .chooseTitle{
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 10px 0 10px;
+      }
+    }
+
+    .chooseRange{
+      margin: 10px 10px 0 0;
+      height: 100px;
+
+      .chooseName{
+        font-family: KaiTi;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .rangeItems{
+        display: flex;
+        position: relative;
+        left: 50px;
+        top: 10px;
+        height: 50px;
+        width: 680px;
+        background-color: #E6E6E6;
+
+        .rangeItem{
+          margin: 10px ;
+          padding: 6px 0 5px 16px;
+        }
+      }
+    }
+
+    .condition{
+      margin: 20px 0 0 0;
+      padding: 5px 0 10px 0;
+      .conditionName{
+        font-family: Kaiti;
+      }
+      .conditionWrapper{
+        display: flex;
+
+        .condition-collection{
+          position: relative;
+          left: 0px;
+          top: 10px;
+          width: 140px;
+          z-index: 5;
+
+          ul{
+            list-style: none;
+
+            li{
+              text-align: center;
+              line-height: 16px;
+              border: 1px solid transparent;
+              cursor: pointer;
+              padding: 10px 0 ;
+
+            }
+            li.selected{
+              border: 1px solid #ccc;
+              border-right: 1px solid #fff;
+              background: #ffffff;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+            }
+
+          }
+        }
+
+        .condition-detail{
+          border-left: 1px solid #ccc;
+          z-index: 4;
+          margin-left: -1px;
+          padding: 0 0 0 30px;
+          width: 600px;
+
+          .check1{
+            display: flex;
+            flex-wrap: wrap;
+            font-family: SimHei;
+            background: #E0E0E0;
+
+            .checkItem{
+              margin: 16px 0 ;
+              width:  190px;
+              height: 32px;
+            }
+          }
+          .check2 {
+            .check2-detail .check2-Items{
+              display: flex;
+              flex-wrap: wrap;
+              font-family: SimHei;
+              background: #E0E0E0;
+
+              .checkItem{
+                width: 190px;
+                height: 32px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .conditionShow{
+      position: relative;
+      margin: 20px 0 0 0;
+
+      .headCondition{
+
+
+      }
+      .conditionName{
+        margin: 10px 0 5px 0;
+        display: inline-block;
+        width: 120px;
+        height: 30px;
+      }
+    }
+  }
+  .right{
+
+  }
+}
+
+
+

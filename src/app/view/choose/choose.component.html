@@ -1,0 +1,122 @@
+<div class="choose">
+  <div class="left">
+    <div class="chooseMarket">
+      <span class="chooseTitle">沪深</span>
+      <span class="chooseTitle">港股</span>
+      <span class="chooseTitle">美股</span>
+    </div>
+    <div class="chooseRange">
+      <div class="chooseName">选择范围</div>
+      <div class="rangeItems">
+        <div class="rangeItem">
+          <span>市场：</span>
+          <select name="rangMarket">
+            <option value="sh_sz">全部A股</option>
+            <option value="sha">沪市A股</option>
+            <option value="sza">深市A股</option>
+          </select>
+        </div>
+        <div class="rangeItem">
+          <span>行业：</span>
+          <select name="rangMarket">
+            <option value="">全部</option>
+            <option *ngFor="let industry of industriesList" value="{{industry.encode}}">{{industry.name}}</option>
+          </select>
+        </div>
+        <div class="rangeItem">
+          <span>地域板块：</span>
+          <select name="rangMarket">
+            <option value="">全部</option>
+            <option *ngFor="let item of areaList" value="{{item}}">{{areas[item]}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="condition">
+      <h3 class="conditionName">条件设置</h3>
+      <div class="conditionWrapper">
+        <div class="condition-collection">
+          <ul class="condition-ul" >
+            <li [class]="{selected:currentTab==tool}" (click)="toggleTabs(tool)  "*ngFor="let tool of tools">{{tool}}</li>
+          </ul>
+        </div>
+        <div class="condition-detail">
+          <div class="check2" *ngIf="currentTab=='财务报表'">
+            <div class="check2-detail">
+              <h4>利润报表</h4>
+              <div class="check2-Items"  >
+                <div class="checkItem" *ngFor="let item of toolsObj[currentTab][0]['利润表']"
+                     (change)="checkEvent(item)">
+                  <input type="checkbox" name="{{item.field}}" >
+                  <label for="{{item.field}}">{{item.name}}</label>
+                </div>
+              </div>
+              <h4>每股数据</h4>
+              <div class="check2-Items">
+                <div class="checkItem" *ngFor="let item of toolsObj[currentTab][1]['每股数据']"
+                     (change)="checkEvent(item)">
+                  <input type="checkbox" name="{{item.field}}" >
+                  <label for="{{item.field}}">{{item.name}}</label>
+                </div>
+              </div>
+              <h4>资产负债表</h4>
+              <div class="check2-Items">
+                <div class="checkItem" *ngFor="let item of toolsObj[currentTab][2]['资产负债表']"
+                     (change)="checkEvent(item)">
+                  <input type="checkbox" name="{{item.field}}" >
+                  <label for="{{item.field}}">{{item.name}}</label>
+                </div>
+              </div>
+              <h4>现金流量表</h4>
+              <div class="check2-Items">
+                <div class="checkItem" *ngFor="let item of toolsObj[currentTab][3]['现金流量表']"
+                     (change)="checkEvent(item)">
+                  <input type="checkbox" name="{{item.field}}" >
+                  <label for="{{item.field}}">{{item.name}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="check1" *ngIf="currentTab !== '财务报表'">
+            <div class="checkItem" *ngFor="let item of toolsObj[currentTab]" (change)="checkEvent(item)">
+              <input type="checkbox" name="{{item.field}}" id="{{item.field}}" >
+              <label for="{{item.field}}">{{item.name}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="conditionShow">
+      <h4>筛选条件</h4>
+      <div class="headCondition">
+        <span class="conditionName">条件</span>
+        <span class="conditionName">最小值</span>
+        <span class="conditionName">条件范围</span>
+        <span class="conditionName">最大值</span>
+        <span class="conditionName">删除</span>
+      </div>
+      <div class="sxContent">
+        <div class="sxItem" *ngFor="let item of sxList">
+          <div class="conditionName">
+            {{item.name}}
+          </div>
+          <div class="conditionName">
+            <input type="text" [(ngModel)]="item.min">
+          </div>
+          <div class="conditionName">
+            <input type="range">
+          </div>
+          <div class="conditionName">
+            <input type="text" [(ngModel)]="item.max">
+          </div>
+          <div class="conditionName">
+            <button>x</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="right">
+
+    </div>
+  </div>
+</div>

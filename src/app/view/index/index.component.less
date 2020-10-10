@@ -1,0 +1,117 @@
+.main{
+  width: 960px;
+  margin: 0 auto;
+}
+.zhishu{
+  width: 576px;
+  overflow: hidden;
+  height: 100px;
+
+  .zhishuList{
+    width: 1920px;
+    display: flex;
+
+    .zhishuItem{
+      display: flex;
+      align-items: center;
+      width: 192px;
+
+      .zhishuItemLeft>h3{
+        font-size: 14px;
+        font-weight: 600;
+        margin: 5px 0px;
+        width: 90px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .zhishuItemLeft>div{
+        font-size: 18px;
+        font-weight: 900;
+        color: orangered;
+      }
+      .zhishuItemLeft>p{
+        font-size: 12px;
+        font-weight: 600;
+        color: orangered;
+        margin: 0;
+      }
+      .svg {
+        display: inline-block;
+        vertical-align: text-top;
+        width: 42px;
+        margin: 12px;
+        svg{
+          right: -4px;
+          transform: scale(.8);
+        }
+      }
+    }
+  }
+
+  .zhishuItem.fushu{
+    .zhishuItemLeft>div,.zhishuItemLeft>p{
+      color: #093 !important;
+    }
+  }
+
+  .circleList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circle{
+      width: 6px;
+      height: 6px;
+      margin: 6px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+  }
+}
+
+.mainRigt{
+  position: relative;
+  top: -50px;
+
+  .newsTab{
+    margin-top: 12px;
+    height: 30px;
+    width: 580px;
+    display: flex;
+    border-bottom: 1px solid #edf0f5;
+
+    .tabBtn{
+      display: block;
+      height: 18px;
+      width: 48px;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
+
+.right{
+  position: relative;
+  top: -70px;
+  left: 600px;
+  width: 380px;
+
+  .stockTitle{
+    font-weight: bold;
+  }
+  .stockList{
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    height:30px;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    .stockMessage{
+      position: relative;
+      margin: 0 15px 0 15px;
+      top: 6px;
+    }
+  }
+}

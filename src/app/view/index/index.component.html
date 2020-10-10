@@ -1,0 +1,46 @@
+<div class="main">
+  <div class="mianLeft">
+    <div class="zhishu">
+      <div class="zhishuList" [style]="zhiShuListPosition">
+        <div class="zhishuItem" *ngFor="let item of quoteList" [class]={fushu:item.quote.percent<0}>
+          <div class="zhishuItemLeft">
+            <h3>{{item.quote.name}}</h3>
+            <div>{{item.quote.current}}</div>
+            <p>
+              {{item.quote.chg}}
+              ({{item.quote.percent}}%)
+            </p>
+          </div>
+          <div class="svg">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+              <path class="StockSlider_last-close_3k-" d="M0 20 L80 20"></path>
+              <path class="StockSlider_polyline_YMO" d="M0 18 L0 18 L0 21 L0 24 L1 26 L1 24 L1 23 L2 19 L2 20 L2 19 L3 15 L3 16 L3 14 L4 20 L4 20 L4 23 L5 20 L5 22 L5 24 L6 23 L6 25 L6 28 L7 27 L7 28 L7 26 L8 26 L8 28 L8 29 L9 30 L9 32 L9 28 L10 28 L10 25 L10 22 L11 23 L11 24 L11 26 L12 27 L12 26 L12 27 L13 30 L13 31 L13 32 L14 30 L14 31 L14 34 L15 35 L15 36 L15 35 L16 34 L16 34 L16 36 L17 35 L17 32 L17 30 L18 31 L18 29 L18 28 L19 27 L19 27 L19 28 L20 28 L20 28 L20 27 L21 27 L21 27 L21 29 L22 30 L22 27 L22 26 L23 22 L23 21 L23 19 L24 18 L24 17 L24 15 L25 15 L25 16 L25 15 L26 15 L26 13 L26 10 L27 10 L27 11 L27 10 L28 10 L28 12 L28 13 L29 12 L29 12 L29 11 L30 9 L30 8 L30 11 L31 11 L31 11 L31 13 L32 15 L32 15 L32 15"></path>
+              <circle class="StockSlider_breathingLight_3M6" r="5" cx="32" cy="15"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="circleList" >
+        <div class="circle" (click)="toggleZhiShu(0)"></div>
+        <div class="circle" (click)="toggleZhiShu(1)"></div>
+        <div class="circle" (click)="toggleZhiShu(2)"></div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <span class="stockTitle">热股榜</span>
+    <div class="stockList">
+      <div class="stockMessage" (click)="stockEvent(0)">全球</div>
+      <div class="stockMessage" (click)="stockEvent(1)">沪深</div>
+      <div class="stockMessage" (click)="stockEvent(2)">港股</div>
+      <div class="stockMessage" (click)="stockEvent(3)">美股</div>
+    </div>
+  </div>
+  <div class="mainRigt">
+    <div class="newsTab">
+      <div class="tabBtn" (click)="tabEvent(0)">推荐</div>
+      <div class="tabBtn" (click)="tabEvent(1)">7x24</div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

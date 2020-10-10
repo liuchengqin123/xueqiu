@@ -1,0 +1,18 @@
+<div class="dayInfo">
+  <div class="time">
+    <span class="day">{{currentTime | date:'dd'}}</span>
+    <span class="month">{{currentTime | date:'MM'}}月</span>
+  </div>
+</div>
+<table class="dayMessage" *ngFor="let dayInfo of DayInfo">
+  <tbody>
+  <tr>
+    <td>{{dayInfo.created_at |totime|date:'HH:mm'}}</td>
+    <td>
+      <span class="point"></span>
+      <span class="line"></span>
+    </td>
+    <td><a>{{dayInfo.text}}</a></td>
+  </tr>
+  </tbody>
+</table>
